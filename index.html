@@ -828,6 +828,54 @@ body.photo-on .chart{opacity:0;pointer-events:none}
 @media (prefers-reduced-motion: reduce){
   .story,.chart{transition:opacity .3s}
 }
+
+/* Part 8 extras: crew tribute + full references */
+#tr.bare .tr-mk,#tr.bare .tr-seg,#tr.bare .tr-prog{display:none}
+.tr-card.full{width:min(92vw,1760px);left:50%;max-height:88vh;padding:clamp(22px,2.2vw,40px) clamp(26px,2.6vw,48px);transform:translate(-50%,calc(-50% + 70px)) rotateX(-16deg)}
+.tr-card.full.in{transform:translate(-50%,-50%) rotateX(0)}
+.tr-card.full.out{transform:translate(-50%,calc(-50% - 50px)) rotateX(10deg)}
+.trib{display:grid;grid-template-columns:1.32fr 1fr;gap:clamp(22px,2.4vw,44px);align-items:center}
+.trib-ph{margin:0;display:flex;flex-direction:column;gap:10px}
+.trib-ph .ph{aspect-ratio:1600/912;border-radius:12px;background-size:cover;background-position:center;background-color:#2b2620;filter:grayscale(1) sepia(.3) contrast(1.05);box-shadow:0 24px 60px rgba(0,0,0,.5);outline:1px solid rgba(240,233,217,.18);outline-offset:6px}
+.tr-card.in .trib-ph .ph{animation:trKen 22s ease-out both}
+.trib-ph figcaption{display:flex;flex-direction:column;gap:3px}
+.trib-ph figcaption b{font:600 clamp(12px,.8vw,15px)/1.3 var(--f-body);color:var(--parchment)}
+.trib-ph figcaption span{font:400 clamp(10px,.6vw,12px)/1.3 var(--f-mono);letter-spacing:.05em;color:rgba(240,233,217,.55)}
+.trib-tx .tc-h{font-size:clamp(30px,2.6vw,50px);margin-bottom:.35em}
+.trib-names{list-style:none;margin:clamp(14px,1.3vw,24px) 0 0;padding:clamp(12px,1.1vw,20px) 0 0;border-top:1px solid rgba(240,233,217,.16);columns:2;column-gap:28px}
+.trib-names li{font:500 clamp(10.5px,.68vw,13px)/1.85 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:rgba(240,233,217,.82);break-inside:avoid}
+.trib-names li:first-child{color:var(--orange)}
+.tr-card.in .trib-names li{animation:trUp .7s cubic-bezier(.2,.7,.2,1) both}
+.refs2{display:grid;grid-template-columns:1.28fr 1fr;gap:clamp(22px,2.4vw,46px);margin-top:clamp(10px,1vw,18px);text-align:left}
+.refs2 h5{margin:0 0 10px;font:500 clamp(10px,.66vw,12.5px)/1.2 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+.refs2 .rl{list-style:none;margin:0;padding:0}
+.refs2 .rl li{font:400 clamp(11px,.74vw,14px)/1.42 var(--f-body);color:rgba(240,233,217,.86);padding-left:2.2em;text-indent:-2.2em;margin:0 0 .52em;overflow-wrap:anywhere}
+.refs2 .rl li i{color:var(--parchment)}
+.refs2 .rnote{margin:14px 0 0;padding-top:12px;border-top:1px solid rgba(240,233,217,.14);font:italic 400 clamp(10.5px,.68vw,13px)/1.45 var(--f-body);color:rgba(240,233,217,.62)}
+
+/* Our leader slide */
+.tr-card.full.leadcard{width:min(78vw,1400px)}
+.lead{display:grid;grid-template-columns:minmax(0,.85fr) 1.15fr;gap:clamp(34px,4.5vw,90px);align-items:center}
+.lead-ph{margin:0;display:flex;flex-direction:column;gap:12px}
+.lead-frame{position:relative;aspect-ratio:3/4;padding:14px;border:1px solid rgba(182,154,100,.55);border-radius:4px;background:linear-gradient(160deg,rgba(182,154,100,.08),rgba(16,29,43,0))}
+.lead-frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(182,154,100,.22);border-radius:2px;pointer-events:none}
+.lead-mono,.lead-img{position:absolute;inset:14px;border-radius:2px}
+.lead-mono{display:grid;place-items:center;background:radial-gradient(circle at 50% 38%,#4a3f31,#1d1a16 75%);font:600 clamp(26px,2.4vw,46px)/1 var(--f-display);letter-spacing:.2em;color:rgba(182,154,100,.75)}
+.lead-img{background-size:cover;background-position:center 22%;filter:grayscale(1) sepia(.35) contrast(1.06);box-shadow:0 26px 60px rgba(0,0,0,.55)}
+.lc{position:absolute;width:22px;height:22px;border-color:var(--gold);border-style:solid;border-width:0}
+.lc.tl{top:-6px;left:-6px;border-top-width:2px;border-left-width:2px}.lc.tr{top:-6px;right:-6px;border-top-width:2px;border-right-width:2px}
+.lc.bl{bottom:-6px;left:-6px;border-bottom-width:2px;border-left-width:2px}.lc.br{bottom:-6px;right:-6px;border-bottom-width:2px;border-right-width:2px}
+.lead-ph figcaption{font:400 clamp(10px,.6vw,12px)/1.3 var(--f-mono);letter-spacing:.05em;color:rgba(240,233,217,.5)}
+.lead-tx .tc-eb{font-size:clamp(12px,.85vw,16px);letter-spacing:.28em}
+.lead-name{margin:.3em 0 .25em;font:700 clamp(46px,4.6vw,92px)/1.0 var(--f-display);letter-spacing:-.02em;color:var(--parchment)}
+.lead-yrs{font:500 clamp(18px,1.5vw,30px)/1 var(--f-mono);letter-spacing:.18em;color:var(--gold)}
+.lead-rule{width:clamp(70px,6vw,120px);height:2px;margin:clamp(24px,2.4vw,44px) 0;background:var(--orange);transform-origin:0 50%}
+.lead-hero{margin:0;font:italic 500 clamp(22px,1.9vw,36px)/1.25 var(--f-display);color:var(--parchment)}
+.tr-card.in .lead-tx>*{animation:trUp .8s cubic-bezier(.2,.7,.2,1) both}
+.tr-card.in .lead-name{animation-delay:.25s}.tr-card.in .lead-yrs{animation-delay:.5s}
+.tr-card.in .lead-rule{animation:ldDraw 1s .8s cubic-bezier(.3,.7,.2,1) both}
+.tr-card.in .lead-hero{animation-delay:1.1s}
+@keyframes ldDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 </style>
 </head>
 <body>
@@ -1115,6 +1163,29 @@ const TR_STEPS = {
     { icon:'people', label:'28 of 28', title:'28 left. 28 came home.', cue:'Let the figures light up. Pause on the final line.',
       html:()=>`<div class="tc-eb">The measure of a leader</div><h2 class="tc-h xl">28 left. 28 came home.</h2>${gfx.people()}
         <p class="tc-p lead c">Shackleton never reached the other side of Antarctica. He achieved something harder: not one member of his team was lost.</p>` }
+  ]},
+  9: { theme:'night', bare:true, cls:'full', steps:[
+    { icon:'compass', cls:'leadcard', label:'Our leader', title:'Sir Ernest Shackleton', cue:'Our leader, our journey, our hero. Pause on his face for a moment.',
+      html:()=>`<div class="lead">
+        <figure class="lead-ph"><div class="lead-frame"><div class="lead-mono">E·H·S</div><div class="lead-img" style="background-image:url('img/shackleton.jpg')"></div>
+          <i class="lc tl"></i><i class="lc tr"></i><i class="lc bl"></i><i class="lc br"></i></div>
+          <figcaption>Ernest Shackleton, before 1909 · Public domain · Wikimedia Commons</figcaption></figure>
+        <div class="lead-tx"><div class="tc-eb">Our leader</div>
+          <h2 class="lead-name">Sir Ernest<br>Shackleton</h2>
+          <div class="lead-yrs">1874 – 1922</div>
+          <div class="lead-rule"></div>
+          <p class="lead-hero">The hero of our journey.</p>
+        </div></div>` },
+    { icon:'people', label:'The 28', title:'The men of the Endurance', cue:'Show the real crew. Read a few names slowly. This is who the story was about.',
+      html:()=>`<div class="trib"><figure class="trib-ph"><div class="ph" style="background-image:url('img/weddell-sea-party.jpg')"></div>
+        <figcaption><b>The Weddell Sea Party on board the Endurance, 1914</b><span>Photo: Frank Hurley · Public domain · Shackleton (1919), via Wikimedia Commons</span></figcaption></figure>
+        <div class="trib-tx"><div class="tc-eb">In honour of the 28</div><h2 class="tc-h">The men of the Endurance</h2>
+        <p class="tc-p">Sailors, scientists, a carpenter, a cook and a stowaway. Ten months held by the ice, five months on drifting floes, four months waiting on Elephant Island. Every one of them came home.</p>
+        <ul class="trib-names"><li>Ernest Shackleton</li><li>William Bakewell</li><li>Perce Blackborow</li><li>Alfred Cheetham</li><li>Robert Clark</li><li>Tom Crean</li><li>Charles Green</li><li>Lionel Greenstreet</li><li>Ernest Holness</li><li>Walter How</li><li>Huberht Hudson</li><li>Frank Hurley</li><li>Leonard Hussey</li><li>Reginald James</li><li>Alexander Kerr</li><li>Alexander Macklin</li><li>George Marston</li><li>Timothy McCarthy</li><li>James McIlroy</li><li>Thomas McLeod</li><li>Harry McNish</li><li>Thomas Orde-Lees</li><li>Lewis Rickinson</li><li>William Stephenson</li><li>John Vincent</li><li>Frank Wild</li><li>James Wordie</li><li>Frank Worsley</li></ul></div></div>` },
+    { icon:'quote', label:'References', title:'References', cue:'Leave this up during Q&amp;A. Full list of sources and image credits (APA 7th).',
+      html:()=>`<div class="tc-eb">Sources · APA 7th edition</div><h2 class="tc-h">References</h2>
+        <div class="refs2"><div><h5>Works cited</h5><ul class="rl"><li>Alexander, C. (1998). <i>The Endurance: Shackleton’s legendary Antarctic expedition</i>. Alfred A. Knopf.</li><li>Blanchard, K., Zigarmi, P., &amp; Zigarmi, D. (1985). <i>Leadership and the one minute manager: Increasing effectiveness through situational leadership</i>. William Morrow.</li><li>Edmondson, A. (1999). Psychological safety and learning behavior in work teams. <i>Administrative Science Quarterly, 44</i>(2), 350–383. https://doi.org/10.2307/2666999</li><li>Falklands Maritime Heritage Trust. (2022, March 9). <i>Endurance is found</i>. Endurance22. https://endurance22.org/endurance-is-found</li><li>Hersey, P., &amp; Blanchard, K. H. (1969). Life cycle theory of leadership. <i>Training and Development Journal, 23</i>(5), 26–34.</li><li>Lansing, A. (1959). <i>Endurance: Shackleton’s incredible voyage</i>. McGraw-Hill.</li><li>Morrell, M., &amp; Capparell, S. (2001). <i>Shackleton’s way: Leadership lessons from the great Antarctic explorer</i>. Viking.</li><li>Shackleton, E. H. (1909). <i>The heart of the Antarctic</i>. William Heinemann.</li><li>Shackleton, E. H. (1919). <i>South: The story of Shackleton’s last expedition, 1914–1917</i>. William Heinemann.</li><li>Tuckman, B. W. (1965). Developmental sequence in small groups. <i>Psychological Bulletin, 63</i>(6), 384–399. https://doi.org/10.1037/h0022100</li><li>Tuckman, B. W., &amp; Jensen, M. A. C. (1977). Stages of small-group development revisited. <i>Group &amp; Organization Studies, 2</i>(4), 419–427. https://doi.org/10.1177/105960117700200404</li><li>Worsley, F. A. (1931). <i>Endurance: An epic of polar adventure</i>. Philip Allan.</li></ul></div>
+        <div><h5>Images</h5><ul class="rl"><li><i>Ernest Shackleton</i> [Photograph]. (n.d., before 1909). National Library of Norway. Public domain. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Ernest_Shackleton_before_1909_(cropped).jpg</li><li>Hurley, F. (1914). <i>The Weddell Sea party on board the Endurance</i> [Photograph]. In E. H. Shackleton, <i>South</i> (1919). Public domain. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:The_Weddell_Sea_Party.jpg</li><li>Hurley, F. (1915a). [Crew members at camp on the sea ice] [Photograph]. Library of Congress. Public domain.</li><li>Hurley, F. (1915b). [The Endurance beset in the Weddell Sea pack ice] [Photograph]. Imperial Trans-Antarctic Expedition. Public domain.</li><li>Hurley, F. (1915c). [The Endurance crushed by the pack ice] [Photograph]. Imperial Trans-Antarctic Expedition. Public domain.</li><li>Hurley, F. (1915d). [The Endurance heeled over by pressure ice] [Photograph]. Imperial Trans-Antarctic Expedition. Public domain.</li></ul><p class="rnote">All other visuals (animated ship and sea scenes, route maps, charts, icons and sepia illustrations) were created digitally for this presentation. In the web version, the Theory 1 pictures are reused from the group’s own Prezi slides.</p></div></div>` }
   ]}
 };
 
@@ -1304,10 +1375,14 @@ const CH = [
  /* ===== PARTS 6–8 · "Expedition Trail" (see TR_STEPS) ===== */
  ...[6,7,8].flatMap(p=>TR_STEPS[p].steps.map((st,i)=>({ part:p, map:null, day:null, tr:{k:p,i}, scene:sc(PRE.night,{endA:0, sink:1, pack:0, ice:.2, exposure:.3}),
    text:{h:st.title}, cue:st.cue, handover:st.handover }))),
+ { part:8, map:null, day:null, tr:{k:9,i:2}, scene:sc(PRE.night,{endA:0, sink:1, pack:0, ice:.2, exposure:.3}),
+   text:{h:'References'}, cue:'Show the full list of sources and image credits (APA 7th).' },
  { part:8, map:null, day:null, scene:sc(PRE.dusk,{shipX:.68, speed:26, sunY:.5}),
    text:{title:true, noCta:true, eyebrow:['Tomorrow’s Leaders','Questions &amp; answers'], h:'Thank you<small>Questions are welcome</small>',
      body:'Ernest Shackleton and the Endurance, 1914–1917. A story of twenty-eight people who came home because their leader kept reading the situation, and adapting.'},
-   cue:'Everyone steps forward. Thank the audience and open the Q&amp;A.' }
+   cue:'Everyone steps forward. Thank the audience and open the Q&amp;A.' },
+ ...[0,1].map(i=>({ part:8, map:null, day:null, tr:{k:9,i}, scene:sc(PRE.night,{endA:0, sink:1, pack:0, ice:.2, exposure:.3}),
+   text:{h:TR_STEPS[9].steps[i].title}, cue:TR_STEPS[9].steps[i].cue }))
 ];
 
 
@@ -2841,7 +2916,7 @@ function trBuild(key){
   const st=document.getElementById('trStars'); st.innerHTML='';
   if (th.stars){ const r=mulberry32(5); let s=''; for(let i=0;i<140;i++) s+=`<i style="left:${(r()*100).toFixed(2)}%;top:${(r()*55).toFixed(2)}%;--d:${(r()*4).toFixed(2)}s;--s:${(1+r()*1.6).toFixed(1)}px"></i>`; st.innerHTML=s; }
   st.style.opacity=th.stars;
-  root.classList.toggle('aurora', !!th.aurora);
+  root.classList.toggle('aurora', !!th.aurora); root.classList.toggle('bare', !!T.bare);
   document.getElementById('trSun').style.display= th.sun ? '' : 'none';
   trGeo={key,SPAN,n,pts}; trKey=key;
 }
@@ -2859,7 +2934,7 @@ function trSet(key, i, instant, entering){
   document.querySelectorAll('#trNear .tr-mk').forEach((m,k)=>{ m.classList.toggle('done',k<i); m.classList.toggle('on',k===i); });
   /* card swap: old lifts away, new rises like a signpost */
   const wrap=document.getElementById('trCards'), old=wrap.querySelector('.tr-card.in');
-  const card=document.createElement('article'); card.className='tr-card'+(TR_STEPS[key].theme==='night'?' wide':''); card.innerHTML=TR_STEPS[key].steps[i].html();
+  const card=document.createElement('article'); card.className='tr-card'+(TR_STEPS[key].cls?' '+TR_STEPS[key].cls:(TR_STEPS[key].theme==='night'?' wide':'')); { const _st=TR_STEPS[key].steps[i]; if(_st&&_st.cls) card.className+=' '+_st.cls; } card.innerHTML=TR_STEPS[key].steps[i].html();
   wrap.appendChild(card);
   card.querySelectorAll('[data-sketch]').forEach(d=>{ const k=d.dataset.sketch; const go2=()=>{ const u=renderStill(k,1100,800); if(u) d.style.backgroundImage=`url(${u})`; }; if(stillCache[k]) go2(); else setTimeout(go2, 30); });
   if (old){ old.classList.remove('in'); old.classList.add('out'); setTimeout(()=>old.remove(), 900); }
